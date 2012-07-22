@@ -43,6 +43,7 @@ func main() {
 		if callback == "" {
 			callback = "jsonpCallback"
 		}
+		w.Header().Set("Content-Type", "text/javascript")
 		fmt.Fprintf(w, "%v(%v)", callback, string(b))
 	})
 
