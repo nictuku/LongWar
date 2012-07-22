@@ -13,18 +13,18 @@ window.onload = (function() {
 	}, longWarMap)
 });
 
-var spriteSize = 64;
-var tiles = ["grass", "forrest", "swamp", "redMountain", "water", "wood", "sand", "nothing"]
-var lastTerrain = 5; // Terrains are from "grass" to "wood".
+const spriteSize = 64;
+const tiles = ["grass", "forrest", "swamp", "redMountain", "water", "wood", "sand", "nothing"];
+const lastTerrain = 5; // Terrains are from "grass" to "wood".
 
 function longWarMap() {
 
-	var width = 800;
-	var height = 600;
+	const width = 800;
+	const height = 600;
 
 	// 30x30 is able to cover a 800x600 screen.
-	var numColumns = 30;
-	var numLines = 30;
+	const numColumns = 30;
+	const numLines = 30;
 	// Each individual item in the sprite has spriteSize*spriteSize pixels.
 	Crafty.sprite(spriteSize, "../images/hexagons.png", {
 		// Sprites from 0 to lastTerrain are used for random terrain generation.
@@ -103,9 +103,8 @@ function longWarMap() {
 				if (grass) grass.forEach(function(tile) {
 					tile.removeComponent("forrest").addComponent("grass");
 				});
-				*/
 					}
-
+				*/
 				});
 			});
 
