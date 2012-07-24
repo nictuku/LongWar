@@ -64,8 +64,11 @@ function longWarMap() {
 	}
 
 	$.ajax({
-		url: 'http://localhost:8080/rnd?jsoncallback=?',
+		url: '/rnd?jsoncallback=?',
 		async: true,
+		// Using JSONP even though this will work on the same domain because I
+		// needed to use localhost for development. That isn't the case
+		// anymore but I'll keep using jsonp anyway just in case.
 		dataType: 'jsonp',
 		timeout: 3000,
 
