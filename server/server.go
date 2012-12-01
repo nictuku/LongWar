@@ -62,7 +62,7 @@ func RandomMap(w http.ResponseWriter, r *http.Request) {
 	// Slow copy. I have to convert this to int because a slice of byte is a binary blob for json.
 	tiles := make([]int, 30*30)
 	for i, v := range rnd {
-		tiles[i] = int(v)%lastTerrain + 1
+		tiles[i] = int(v)%lastTerrain
 	}
 
 	b, err := json.Marshal(tiles)

@@ -14,8 +14,8 @@ window.onload = (function() {
 });
 
 const spriteSize = 64;
-const tiles = ["grass", "forrest", "swamp", "redMountain", "water", "wood", "sand", "nothing"];
-const lastTerrain = 5; // Terrains are from "grass" to "wood".
+const tiles = ["dirt", "mountain", "darkForest", "sand", "forest", "savannah"];
+const lastTerrain = 5;
 
 function longWarMap() {
 
@@ -28,14 +28,12 @@ function longWarMap() {
 	// Each individual item in the sprite has spriteSize*spriteSize pixels.
 	Crafty.sprite(spriteSize, "../images/hexagons.png", {
 		// Sprites from 0 to lastTerrain are used for random terrain generation.
-		grass: [0, 0],
-		forrest: [1, 0],
-		swamp: [2, 0],
-		redMountain: [3, 0],
-		nothing: [4, 0],
-		water: [5, 0],
-		wood: [6, 0],
-		sand: [7, 0]
+		dirt: [0, 0],
+		mountain: [1, 0],
+		darkForest: [2, 0],
+		sand: [3, 0],
+		forest: [4, 0],
+		savannah: [5, 0],
 	});
 
 	var hexmap = Crafty.e("Hexmap").hexmap(spriteSize, spriteSize);
