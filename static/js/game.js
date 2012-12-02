@@ -17,6 +17,22 @@ const spriteSize = 64;
 const tiles = ["dirt", "mountain", "darkForest", "sand", "forest", "savannah", "water"];
 const lastTerrain = 6;
 
+
+// from:
+// http://jquerybyexample.blogspot.com/2012/06/get-url-parameters-using-jquery.html
+function GetURLParameter(sParam) {
+    var sPageURL = window.location.search.substring(1);
+    var sURLVariables = sPageURL.split('&');
+    for (var i = 0; i < sURLVariables.length; i++) 
+    {
+        var sParameterName = sURLVariables[i].split('=');
+        if (sParameterName[0] == sParam) 
+        {
+            return sParameterName[1];
+        }
+    }
+}
+
 function longWarMap() {
 
 	const width = 800;
@@ -62,8 +78,10 @@ function longWarMap() {
 		}
 	}
 
+	var mapSeed = GetURLParameter("seed");
+
 	$.ajax({
-		url: '/createmap?jsoncallback=?',
+		url: '/createmap?jsoncallback=?&seed=' + mapSeed,
 		async: true,
 		// Using JSONP even though this will work on the same domain because I
 		// needed to use localhost for development. That isn't the case
