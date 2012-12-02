@@ -1,0 +1,14 @@
+{
+	"first": "test",
+	"array": ["first","second","third"],
+
+	"nested1": {
+		"val1": "Test string",
+		"val2": 123
+	},
+
+	"nested2": {
+		"Val1": 321,
+		"valother2": 111
+	}
+}

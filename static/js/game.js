@@ -14,8 +14,8 @@ window.onload = (function() {
 });
 
 const spriteSize = 64;
-const tiles = ["dirt", "mountain", "darkForest", "sand", "forest", "savannah"];
-const lastTerrain = 5;
+const tiles = ["dirt", "mountain", "darkForest", "sand", "forest", "savannah", "water"];
+const lastTerrain = 6;
 
 function longWarMap() {
 
@@ -34,6 +34,7 @@ function longWarMap() {
 		sand: [3, 0],
 		forest: [4, 0],
 		savannah: [5, 0],
+		water: [6, 0]
 	});
 
 	var hexmap = Crafty.e("Hexmap").hexmap(spriteSize, spriteSize);
@@ -62,7 +63,7 @@ function longWarMap() {
 	}
 
 	$.ajax({
-		url: '/rnd?jsoncallback=?',
+		url: '/createmap?jsoncallback=?',
 		async: true,
 		// Using JSONP even though this will work on the same domain because I
 		// needed to use localhost for development. That isn't the case

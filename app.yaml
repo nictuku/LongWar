@@ -1,5 +1,5 @@
 application: longwargame
-version: 1
+version: 2
 runtime: go
 api_version: go1
 
@@ -9,6 +9,9 @@ handlers:
   upload: static/(.*\.(js|css|png))
 
 - url: /rnd
+  script: _go_app
+
+- url: /createmap
   script: _go_app
 
 - url: /
